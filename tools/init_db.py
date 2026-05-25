@@ -8,7 +8,7 @@ import pandas as pd
 # 测试文件要用的
 local_file = "../travel_new.sqlite"
 # 创建一个备份文件
-backup_file = "../travel2.sqlite"
+# backup_file = "../travel2.sqlite"
 
 def update_dates():
     """
@@ -21,7 +21,7 @@ def update_dates():
         str: 更新后的数据库文件路径。
     """
     # 使用备份文件覆盖现有文件，作为重置步骤
-    shutil.copy(backup_file, local_file)  # 如果目标路径已经存在一个同名文件，shutil.copy 会覆盖该文件。
+#    shutil.copy(backup_file, local_file)  # 如果目标路径已经存在一个同名文件，shutil.copy 会覆盖该文件。
 
     conn = sqlite3.connect(local_file)
     # cursor = conn.cursor()
