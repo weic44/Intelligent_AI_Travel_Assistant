@@ -1,0 +1,382 @@
+2026-05-25 09:47:53 - DEBUG - log_utils.py:64 - 这是一条调试信息 (Debug)
+2026-05-25 09:47:53 - INFO - log_utils.py:65 - 程序正常启动 (Info)
+2026-05-25 09:47:53 - WARNING - log_utils.py:66 - 这是一个警告信息 (Warning)
+2026-05-25 09:47:53 - ERROR - log_utils.py:67 - 发生了一个错误 (Error)
+2026-05-25 09:55:21 - ERROR - draw_png.py:11 - Failed to reach https://mermaid.ink API while trying to render your graph after 1 retries. To resolve this issue:
+1. Check your internet connection and try again
+2. Try with higher retry settings: `draw_mermaid_png(..., max_retries=5, retry_delay=2.0)`
+3. Use the Pyppeteer rendering method which will render your graph locally in a browser: `draw_mermaid_png(..., draw_method=MermaidDrawMethod.PYPPETEER)`
+Traceback (most recent call last):
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\urllib3\connectionpool.py", line 788, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\urllib3\connectionpool.py", line 1106, in _validate_conn
+    conn.connect()
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\urllib3\connection.py", line 796, in connect
+    sock_and_verified = _ssl_wrap_socket_and_match_hostname(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\urllib3\connection.py", line 975, in _ssl_wrap_socket_and_match_hostname
+    ssl_sock = ssl_wrap_socket(
+               ^^^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\urllib3\util\ssl_.py", line 433, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(sock, context, tls_in_tls, server_hostname)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\urllib3\util\ssl_.py", line 477, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\t\AppData\Local\Programs\Python\Python312\Lib\ssl.py", line 455, in wrap_socket
+    return self.sslsocket_class._create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\t\AppData\Local\Programs\Python\Python312\Lib\ssl.py", line 1046, in _create
+    self.do_handshake()
+  File "C:\Users\t\AppData\Local\Programs\Python\Python312\Lib\ssl.py", line 1321, in do_handshake
+    self._sslobj.do_handshake()
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\requests\adapters.py", line 645, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\urllib3\connectionpool.py", line 842, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\urllib3\util\retry.py", line 498, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\urllib3\util\util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\urllib3\connectionpool.py", line 788, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\urllib3\connectionpool.py", line 1106, in _validate_conn
+    conn.connect()
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\urllib3\connection.py", line 796, in connect
+    sock_and_verified = _ssl_wrap_socket_and_match_hostname(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\urllib3\connection.py", line 975, in _ssl_wrap_socket_and_match_hostname
+    ssl_sock = ssl_wrap_socket(
+               ^^^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\urllib3\util\ssl_.py", line 433, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(sock, context, tls_in_tls, server_hostname)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\urllib3\util\ssl_.py", line 477, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\t\AppData\Local\Programs\Python\Python312\Lib\ssl.py", line 455, in wrap_socket
+    return self.sslsocket_class._create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\t\AppData\Local\Programs\Python\Python312\Lib\ssl.py", line 1046, in _create
+    self.do_handshake()
+  File "C:\Users\t\AppData\Local\Programs\Python\Python312\Lib\ssl.py", line 1321, in do_handshake
+    self._sslobj.do_handshake()
+urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\langchain_core\runnables\graph_mermaid.py", line 461, in _render_mermaid_using_api
+    response = requests.get(image_url, timeout=10, proxies=proxies)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\requests\sessions.py", line 592, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\requests\sessions.py", line 706, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\requests\adapters.py", line 660, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\python_code\PythonProject\ctrip_assistant\utlis\draw_png.py", line 7, in draw_png
+    mermaid_code = graph.get_graph().draw_mermaid_png()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\langchain_core\runnables\graph.py", line 693, in draw_mermaid_png
+    return draw_mermaid_png(
+           ^^^^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\langchain_core\runnables\graph_mermaid.py", line 314, in draw_mermaid_png
+    img_bytes = _render_mermaid_using_api(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\langchain_core\runnables\graph_mermaid.py", line 496, in _render_mermaid_using_api
+    raise ValueError(msg) from e
+ValueError: Failed to reach https://mermaid.ink API while trying to render your graph after 1 retries. To resolve this issue:
+1. Check your internet connection and try again
+2. Try with higher retry settings: `draw_mermaid_png(..., max_retries=5, retry_delay=2.0)`
+3. Use the Pyppeteer rendering method which will render your graph locally in a browser: `draw_mermaid_png(..., draw_method=MermaidDrawMethod.PYPPETEER)`
+2026-05-25 09:59:27 - ERROR - draw_png.py:11 - Failed to reach https://mermaid.ink API while trying to render your graph after 1 retries. To resolve this issue:
+1. Check your internet connection and try again
+2. Try with higher retry settings: `draw_mermaid_png(..., max_retries=5, retry_delay=2.0)`
+3. Use the Pyppeteer rendering method which will render your graph locally in a browser: `draw_mermaid_png(..., draw_method=MermaidDrawMethod.PYPPETEER)`
+Traceback (most recent call last):
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\urllib3\connectionpool.py", line 788, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\urllib3\connectionpool.py", line 1106, in _validate_conn
+    conn.connect()
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\urllib3\connection.py", line 796, in connect
+    sock_and_verified = _ssl_wrap_socket_and_match_hostname(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\urllib3\connection.py", line 975, in _ssl_wrap_socket_and_match_hostname
+    ssl_sock = ssl_wrap_socket(
+               ^^^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\urllib3\util\ssl_.py", line 433, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(sock, context, tls_in_tls, server_hostname)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\urllib3\util\ssl_.py", line 477, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\t\AppData\Local\Programs\Python\Python312\Lib\ssl.py", line 455, in wrap_socket
+    return self.sslsocket_class._create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\t\AppData\Local\Programs\Python\Python312\Lib\ssl.py", line 1046, in _create
+    self.do_handshake()
+  File "C:\Users\t\AppData\Local\Programs\Python\Python312\Lib\ssl.py", line 1321, in do_handshake
+    self._sslobj.do_handshake()
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\requests\adapters.py", line 645, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\urllib3\connectionpool.py", line 842, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\urllib3\util\retry.py", line 498, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\urllib3\util\util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\urllib3\connectionpool.py", line 788, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\urllib3\connectionpool.py", line 1106, in _validate_conn
+    conn.connect()
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\urllib3\connection.py", line 796, in connect
+    sock_and_verified = _ssl_wrap_socket_and_match_hostname(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\urllib3\connection.py", line 975, in _ssl_wrap_socket_and_match_hostname
+    ssl_sock = ssl_wrap_socket(
+               ^^^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\urllib3\util\ssl_.py", line 433, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(sock, context, tls_in_tls, server_hostname)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\urllib3\util\ssl_.py", line 477, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\t\AppData\Local\Programs\Python\Python312\Lib\ssl.py", line 455, in wrap_socket
+    return self.sslsocket_class._create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\t\AppData\Local\Programs\Python\Python312\Lib\ssl.py", line 1046, in _create
+    self.do_handshake()
+  File "C:\Users\t\AppData\Local\Programs\Python\Python312\Lib\ssl.py", line 1321, in do_handshake
+    self._sslobj.do_handshake()
+urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\langchain_core\runnables\graph_mermaid.py", line 461, in _render_mermaid_using_api
+    response = requests.get(image_url, timeout=10, proxies=proxies)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\requests\sessions.py", line 592, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\requests\sessions.py", line 706, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\requests\adapters.py", line 660, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\python_code\PythonProject\ctrip_assistant\utlis\draw_png.py", line 7, in draw_png
+    mermaid_code = graph.get_graph().draw_mermaid_png()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\langchain_core\runnables\graph.py", line 693, in draw_mermaid_png
+    return draw_mermaid_png(
+           ^^^^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\langchain_core\runnables\graph_mermaid.py", line 314, in draw_mermaid_png
+    img_bytes = _render_mermaid_using_api(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\langchain_core\runnables\graph_mermaid.py", line 496, in _render_mermaid_using_api
+    raise ValueError(msg) from e
+ValueError: Failed to reach https://mermaid.ink API while trying to render your graph after 1 retries. To resolve this issue:
+1. Check your internet connection and try again
+2. Try with higher retry settings: `draw_mermaid_png(..., max_retries=5, retry_delay=2.0)`
+3. Use the Pyppeteer rendering method which will render your graph locally in a browser: `draw_mermaid_png(..., draw_method=MermaidDrawMethod.PYPPETEER)`
+2026-05-25 10:07:54 - ERROR - draw_png.py:13 - Graph.draw_mermaid_png() takes 1 positional argument but 2 positional arguments (and 1 keyword-only argument) were given
+Traceback (most recent call last):
+  File "E:\python_code\PythonProject\ctrip_assistant\utlis\draw_png.py", line 9, in draw_png
+    mermaid_code = graph.get_graph().draw_mermaid_png(...,draw_method=MermaidDrawMethod.PYPPETEER)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Graph.draw_mermaid_png() takes 1 positional argument but 2 positional arguments (and 1 keyword-only argument) were given
+2026-05-25 10:09:29 - ERROR - draw_png.py:13 - Install Pyppeteer to use the Pyppeteer method: `pip install pyppeteer`.
+Traceback (most recent call last):
+  File "E:\python_code\PythonProject\ctrip_assistant\utlis\draw_png.py", line 9, in draw_png
+    mermaid_code = graph.get_graph().draw_mermaid_png(draw_method=MermaidDrawMethod.PYPPETEER)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\langchain_core\runnables\graph.py", line 693, in draw_mermaid_png
+    return draw_mermaid_png(
+           ^^^^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\langchain_core\runnables\graph_mermaid.py", line 308, in draw_mermaid_png
+    img_bytes = asyncio.run(
+                ^^^^^^^^^^^^
+  File "C:\Users\t\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\t\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\t\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 684, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\langchain_core\runnables\graph_mermaid.py", line 344, in _render_mermaid_using_pyppeteer
+    raise ImportError(msg)
+ImportError: Install Pyppeteer to use the Pyppeteer method: `pip install pyppeteer`.
+2026-05-25 10:11:53 - ERROR - draw_png.py:13 - Chromium downloadable not found at https://storage.googleapis.com/chromium-browser-snapshots/Win_x64/1181205/chrome-win.zip: Received <?xml version='1.0' encoding='UTF-8'?><Error><Code>NoSuchKey</Code><Message>The specified key does not exist.</Message><Details>No such object: chromium-browser-snapshots/Win_x64/1181205/chrome-win.zip</Details></Error>.
+Traceback (most recent call last):
+  File "E:\python_code\PythonProject\ctrip_assistant\utlis\draw_png.py", line 9, in draw_png
+    mermaid_code = graph.get_graph().draw_mermaid_png(draw_method=MermaidDrawMethod.PYPPETEER)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\langchain_core\runnables\graph.py", line 693, in draw_mermaid_png
+    return draw_mermaid_png(
+           ^^^^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\langchain_core\runnables\graph_mermaid.py", line 308, in draw_mermaid_png
+    img_bytes = asyncio.run(
+                ^^^^^^^^^^^^
+  File "C:\Users\t\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\t\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\t\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 684, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\langchain_core\runnables\graph_mermaid.py", line 346, in _render_mermaid_using_pyppeteer
+    browser = await launch()
+              ^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\pyppeteer\launcher.py", line 307, in launch
+    return await Launcher(options, **kwargs).launch()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\pyppeteer\launcher.py", line 120, in __init__
+    download_chromium()
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\pyppeteer\chromium_downloader.py", line 138, in download_chromium
+    extract_zip(download_zip(get_url()), DOWNLOADS_FOLDER / REVISION)
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\pyppeteer\chromium_downloader.py", line 82, in download_zip
+    raise OSError(f'Chromium downloadable not found at {url}: ' f'Received {r.data.decode()}.\n')
+OSError: Chromium downloadable not found at https://storage.googleapis.com/chromium-browser-snapshots/Win_x64/1181205/chrome-win.zip: Received <?xml version='1.0' encoding='UTF-8'?><Error><Code>NoSuchKey</Code><Message>The specified key does not exist.</Message><Details>No such object: chromium-browser-snapshots/Win_x64/1181205/chrome-win.zip</Details></Error>.
+
+2026-05-25 10:15:13 - ERROR - draw_png.py:17 - Chromium downloadable not found at https://storage.googleapis.com/chromium-browser-snapshots/Win_x64/1181205/chrome-win.zip: Received <?xml version='1.0' encoding='UTF-8'?><Error><Code>NoSuchKey</Code><Message>The specified key does not exist.</Message><Details>No such object: chromium-browser-snapshots/Win_x64/1181205/chrome-win.zip</Details></Error>.
+Traceback (most recent call last):
+  File "E:\python_code\PythonProject\ctrip_assistant\utlis\draw_png.py", line 13, in draw_png
+    mermaid_code = graph.get_graph().draw_mermaid_png(draw_method=MermaidDrawMethod.PYPPETEER)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\langchain_core\runnables\graph.py", line 693, in draw_mermaid_png
+    return draw_mermaid_png(
+           ^^^^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\langchain_core\runnables\graph_mermaid.py", line 308, in draw_mermaid_png
+    img_bytes = asyncio.run(
+                ^^^^^^^^^^^^
+  File "C:\Users\t\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\t\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\t\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 684, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\langchain_core\runnables\graph_mermaid.py", line 346, in _render_mermaid_using_pyppeteer
+    browser = await launch()
+              ^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\pyppeteer\launcher.py", line 307, in launch
+    return await Launcher(options, **kwargs).launch()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\pyppeteer\launcher.py", line 120, in __init__
+    download_chromium()
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\pyppeteer\chromium_downloader.py", line 138, in download_chromium
+    extract_zip(download_zip(get_url()), DOWNLOADS_FOLDER / REVISION)
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\pyppeteer\chromium_downloader.py", line 82, in download_zip
+    raise OSError(f'Chromium downloadable not found at {url}: ' f'Received {r.data.decode()}.\n')
+OSError: Chromium downloadable not found at https://storage.googleapis.com/chromium-browser-snapshots/Win_x64/1181205/chrome-win.zip: Received <?xml version='1.0' encoding='UTF-8'?><Error><Code>NoSuchKey</Code><Message>The specified key does not exist.</Message><Details>No such object: chromium-browser-snapshots/Win_x64/1181205/chrome-win.zip</Details></Error>.
+
+2026-05-25 10:17:08 - ERROR - draw_png.py:17 - Chromium downloadable not found at https://storage.googleapis.com/chromium-browser-snapshots/Win_x64/1181205/chrome-win.zip: Received <?xml version='1.0' encoding='UTF-8'?><Error><Code>NoSuchKey</Code><Message>The specified key does not exist.</Message><Details>No such object: chromium-browser-snapshots/Win_x64/1181205/chrome-win.zip</Details></Error>.
+Traceback (most recent call last):
+  File "E:\python_code\PythonProject\ctrip_assistant\utlis\draw_png.py", line 13, in draw_png
+    mermaid_code = graph.get_graph().draw_mermaid_png(draw_method=MermaidDrawMethod.PYPPETEER)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\langchain_core\runnables\graph.py", line 693, in draw_mermaid_png
+    return draw_mermaid_png(
+           ^^^^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\langchain_core\runnables\graph_mermaid.py", line 308, in draw_mermaid_png
+    img_bytes = asyncio.run(
+                ^^^^^^^^^^^^
+  File "C:\Users\t\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\t\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\t\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 684, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\langchain_core\runnables\graph_mermaid.py", line 346, in _render_mermaid_using_pyppeteer
+    browser = await launch()
+              ^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\pyppeteer\launcher.py", line 307, in launch
+    return await Launcher(options, **kwargs).launch()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\pyppeteer\launcher.py", line 120, in __init__
+    download_chromium()
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\pyppeteer\chromium_downloader.py", line 138, in download_chromium
+    extract_zip(download_zip(get_url()), DOWNLOADS_FOLDER / REVISION)
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_code\LangChainProject\.venv\Lib\site-packages\pyppeteer\chromium_downloader.py", line 82, in download_zip
+    raise OSError(f'Chromium downloadable not found at {url}: ' f'Received {r.data.decode()}.\n')
+OSError: Chromium downloadable not found at https://storage.googleapis.com/chromium-browser-snapshots/Win_x64/1181205/chrome-win.zip: Received <?xml version='1.0' encoding='UTF-8'?><Error><Code>NoSuchKey</Code><Message>The specified key does not exist.</Message><Details>No such object: chromium-browser-snapshots/Win_x64/1181205/chrome-win.zip</Details></Error>.
+
+2026-05-25 10:37:22 - INFO - draw_png.py:27 - Playwright browser launched successfully.
+2026-05-25 10:37:23 - INFO - draw_png.py:109 - Mermaid diagram saved to graph1.png
+2026-05-25 11:14:21 - INFO - draw_png.py:27 - Playwright browser launched successfully.
+2026-05-25 11:14:22 - INFO - draw_png.py:109 - Mermaid diagram saved to graph2.png
+2026-05-25 11:41:29 - INFO - draw_png.py:27 - Playwright browser launched successfully.
+2026-05-25 11:41:33 - INFO - draw_png.py:109 - Mermaid diagram saved to graph3.png
