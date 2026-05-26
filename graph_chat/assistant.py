@@ -58,30 +58,21 @@ primary_assistant_prompt = ChatPromptTemplate.from_messages(
         ),
         ("placeholder", "{messages}"),
     ]
-).partial(time=datetime.now())
+).partial(time=datetime.datetime.now())
 
 
-def create_assistant_node() -> CtripAssistant:
-    """
-    定义节点
-    :return:
-    """
-    # 定义主助理使用的工具
-    primary_assistant_tools = [
-        search_car_rentals,
-        lookup_policy,
+# 定义主助理使用的工具
+primary_assistant_tools = [
+    search_car_rentals,
+    lookup_policy,
+]
+
+assistant_runnable = primary_assistant_prompt | llm.bind_tools(
+    primary_assistant_tools
+    + [
+        ToFlightBookingAssistant, # 转交给航班agent
+        ToBookCarRental,
+        ToHotelBookingAssistant,
+        ToBookCarRental
     ]
-
-    assistant_runnable = primary_assistant_prompt | llm.bind_tools(
-        primary_assistant_tools,
-        + [
-            ToFlightBookingAssistant, # 转交给航班agent
-            ToBookCarRental,
-            ToHotelBookingAssistant,
-            ToBookCarRental
-        ]
-    )
-
-    return CtripAssistant(assistant_runnable)
-
-    return CtripAssistant(runnable) # 创建一个类的对象
+)

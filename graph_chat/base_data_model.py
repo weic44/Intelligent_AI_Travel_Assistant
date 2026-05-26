@@ -1,6 +1,6 @@
 from pydantic import BaseModel,Field
 
-
+# 用户改变或是取消了任务
 class CompleteOrEscalate(BaseModel):
     """
     用户在确认任务时需需要用到的类
