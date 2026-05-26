@@ -24,3 +24,7 @@ def build_flight_graph(builder:StateGraph)->StateGraph:
         "update_flight_safe_tools",
         create_tool_node_with_fallback(update_flight_safe_tools) # 安全工具节点
     )
+
+
+def route_update_flight(state:dict):
+    pass
