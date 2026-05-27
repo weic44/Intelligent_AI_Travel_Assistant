@@ -1,6 +1,6 @@
 from langgraph.checkpoint.memory import MemorySaver
 from langgraph.constants import START,END
-from langgraph.graph import StateGraph
+from langgraph.graph import StateGraph, MessagesState
 from langgraph.prebuilt import tools_condition
 
 from graph_chat.assistant import CtripAssistant, assistant_runnable, primary_assistant_tools

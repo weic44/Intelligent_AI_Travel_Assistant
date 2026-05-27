@@ -6,7 +6,7 @@ from langgraph.constants import START,END
 from langgraph.graph import StateGraph
 from langgraph.prebuilt import tools_condition
 
-from graph_chat.assistant import create_assistant_node, safe_tools, sensitive_tools, sensitive_tools_names
+# from graph_chat.assistant import create_assistant_node, safe_tools, sensitive_tools, sensitive_tools_names
 from graph_chat.state import State
 from tools.flights_tools import fetch_user_flight_information
 from tools.init_db import update_dates

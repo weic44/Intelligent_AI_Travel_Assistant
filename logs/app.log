@@ -384,3 +384,5 @@ OSError: Chromium downloadable not found at https://storage.googleapis.com/chrom
 2026-05-26 16:51:47 - INFO - draw_png.py:109 - Mermaid diagram saved to graph4.png
 2026-05-26 16:57:06 - INFO - draw_png.py:27 - Playwright browser launched successfully.
 2026-05-26 16:57:11 - INFO - draw_png.py:109 - Mermaid diagram saved to graph4.png
+2026-05-27 16:41:44 - INFO - draw_png.py:27 - Playwright browser launched successfully.
+2026-05-27 16:41:45 - INFO - draw_png.py:109 - Mermaid diagram saved to graph_supervisor.png
