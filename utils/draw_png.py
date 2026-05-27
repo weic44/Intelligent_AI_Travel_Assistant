@@ -3,7 +3,7 @@ from typing import Union
 from playwright.sync_api import sync_playwright, Browser, Page
 from langchain_core.runnables.graph import Graph
 
-from utlis.log_utils import get_logger
+from utils.log_utils import get_logger
 
 logger = get_logger(__name__)
 

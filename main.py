@@ -1,16 +1,43 @@
-# 这是一个示例 Python 脚本。
+import uvicorn
+from fastapi import FastAPI, Depends
+from starlette.staticfiles import StaticFiles
+from config import settings
+from utils import handler_error, cors, middlewares
 
-# 按 Shift+F10 执行或将其替换为您的代码。
-# 按 双击 Shift 在所有地方搜索类、文件、工具窗口、操作和设置。
+from config.log_config import init_log
+from api import routers
+from utils.docs_oauth2 import MyOAuth2PasswordBearer
 
 
-def print_hi(name):
-    # 在下面的代码行中使用断点来调试脚本。
-    print(f'Hi, {name}')  # 按 Ctrl+F8 切换断点。
+class Server:
+
+    def __init__(self):
+        init_log()  # 加载日志的配置
+        # 创建自定义的OAuth2的实例
+        my_oauth2 = MyOAuth2PasswordBearer(tokenUrl='/api/auth/', schema='JWT')
+        # 添加全局的依赖: 让所有的接口，都拥有接口文档的认证
+        self.app = FastAPI(dependencies=[Depends(my_oauth2)])
+        # 把项目下的static目录作为静态文件的访问目录
+        self.app.mount('/static', StaticFiles(directory='static'), name='my_static')
+
+    def init_app(self):
+        # 初始化全局异常处理
+        handler_error.init_handler_errors(self.app)
+        # 初始化全局中间件
+        middlewares.init_middleware(self.app)
+        # 初始化全局CORS跨域的处理
+        cors.init_cors(self.app)
+        # 初始化主路由
+        routers.init_routers(self.app)
+
+    def run(self):
+        self.init_app()
+        uvicorn.run(
+            app=self.app,
+            host=settings.HOST,
+            port=settings.PORT
+        )
 
 
-# 按装订区域中的绿色按钮以运行脚本。
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# 访问 https://www.jetbrains.com/help/pycharm/ 获取 PyCharm 帮助
+    Server().run()

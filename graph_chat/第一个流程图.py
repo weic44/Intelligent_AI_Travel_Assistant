@@ -12,7 +12,7 @@ from tools.flights_tools import fetch_user_flight_information
 from tools.init_db import update_dates
 from tools.tools_handler import create_tool_node_with_fallback
 from tools.tools_handler import _print_event
-from utlis.draw_png import draw_png_local
+from utils.draw_png import draw_png_local
 
 
 def get_user_info(state:State):
@@ -53,7 +53,7 @@ memory = MemorySaver()
 # 编译状态图，检查点位memory,配置中断点
 graph = builder.compile(checkpointer=memory,interrupt_before=['tools'])
 
-draw_png_local(graph,"graph2.png")
+draw_png_local(graph, "../static/graph2.png")
 
 session_id = str(uuid.uuid4())
 

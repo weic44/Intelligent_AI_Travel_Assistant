@@ -12,7 +12,7 @@ from tools.flights_tools import fetch_user_flight_information
 from tools.init_db import update_dates
 from tools.tools_handler import create_tool_node_with_fallback
 from tools.tools_handler import _print_event
-from utlis.draw_png import draw_png_local
+from utils.draw_png import draw_png_local
 
 
 def get_user_info(state:State):
